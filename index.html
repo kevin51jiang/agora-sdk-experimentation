@@ -227,16 +227,20 @@
       });
     }
 
+    
     // changes recording volume from 50 to 100 and vice versa
     function volumeToggle() {
 
       if (isAt50) {
         client.adjustRecordingSignalVolume(100);
+        Agora.Logger.info("Toggled volume recorded to 100%");
       } else {
         client.adjustRecordingSignalVolume(50);
+        Agora.Logger.info("Toggled volume recorded to 50%")
       }
       
       isAt50 = !isAt50; //Invert it so it can be toggled the enxt time
+      
     }
 
 
