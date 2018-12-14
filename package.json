@@ -18,6 +18,8 @@
   "homepage": "https://github.com/kevin51jiang/agora-sdk-experimentation#readme",
   "dependencies": {
     "agora-rtc-sdk": "^2.5.0",
+    "hark": "^1.2.3",
+    "mediastream-gain": "^1.0.1",
     "net-ping": "^1.2.3",
     "peaks.js": "^0.9.13"
   }

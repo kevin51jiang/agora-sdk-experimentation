@@ -100,7 +100,7 @@
               localStream.setVideoProfile('720p_3');
 
             }
-
+          
             // The user has granted access to the camera and mic.
             localStream.on("accessAllowed", function () {
               console.log("accessAllowed");
@@ -185,6 +185,7 @@
 
     function leave() {
       document.getElementById("leave").disabled = true;
+      document.getElementById("join").disabled = false;
       client.leave(function () {
         console.log("Leavel channel successfully");
       }, function (err) {
@@ -232,7 +233,7 @@
     function volumeToggle() {
 
       if (isAt50) {
-        client.adjustRecordingSignalVolume(100);
+        client.adjustRecordingSignalVolume(function());
         Agora.Logger.info("Toggled volume recorded to 100%");
       } else {
         client.adjustRecordingSignalVolume(50);
