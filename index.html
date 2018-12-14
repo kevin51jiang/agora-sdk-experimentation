@@ -77,6 +77,7 @@
 
     var audioSelect = document.querySelector('select#audioSource');
     var videoSelect = document.querySelector('select#videoSource');
+    var audioStream, videoStream;
     var isAt50 = false;
 
     function join() {
@@ -233,10 +234,14 @@
     function volumeToggle() {
 
       if (isAt50) {
-        client.adjustRecordingSignalVolume(function());
+        client.adjustRecordingSignalVolume(function(heh){
+          Agora.Logger.info("heh = " + heh);
+        });
         Agora.Logger.info("Toggled volume recorded to 100%");
       } else {
-        client.adjustRecordingSignalVolume(50);
+        client.adjustRecordingSignalVolume(function(heh){
+          Agora.Logger.info("heh = " + heh);
+        });
         Agora.Logger.info("Toggled volume recorded to 50%")
       }
       
